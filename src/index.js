@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-import {InputKorPhone} from "./components/InputKorPhone";
+import {InputKorPhone} from "./lib/components/InputKorPhone";
 export {InputKorPhone};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

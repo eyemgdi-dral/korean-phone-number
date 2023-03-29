@@ -1,7 +1,7 @@
 export const InputKorPhone = () => {
     return (
         <div>
-            <h1>InputKorPhone</h1>
+            <h1>InputKorPhone 2</h1>
         </div>
     );
 };
