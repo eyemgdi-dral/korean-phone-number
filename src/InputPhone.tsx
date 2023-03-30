@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-export interface InputPhoneProps {
-  onChange: Function;
-}
+// export interface InputPhoneProps {
+//   onChange: Function;
+// }
 const numbers = /^[0-9 -]+$/;
-export function InputPhone({ onChange }: InputPhoneProps) {
+export function InputPhone({ onChange, style }: any) {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const updatePhoneNumber = (event: any) => {
@@ -26,41 +26,41 @@ export function InputPhone({ onChange }: InputPhoneProps) {
     onChange(str);
   };
 
-  function phoneFormatter(num: string) {
-    var numbers = /^[0-9 -]+$/;
+  return <input type="text" style={style} onChange={updatePhoneNumber} />;
+}
 
-    var formatNum = num;
-    if (!num.match(numbers)) {
-      formatNum = '';
-      num = '';
-    }
-    num = num.replace(/-/g, '');
-    if (num.indexOf('02') == 0) {
-      if (num.length > 10) {
-        num = num.substr(0, 10);
-        formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
-      } else if (num.length > 9) {
-        formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
-      } else if (num.length > 5) {
-        formatNum = num.replace(/(\d{2})(\d{3})(\d)/, '$1-$2-$3');
-      } else if (num.length >= 2) {
-        formatNum = num.replace(/(\d{2})(\d)/, '$1-$2');
-      }
-    } else {
-      if (num.length > 11) {
-        num = num.substr(0, 11);
-        formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-      } else if (num.length > 10) {
-        formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-      } else if (num.length > 6) {
-        formatNum = num.replace(/(\d{3})(\d{3})(\d)/, '$1-$2-$3');
-      } else if (num.length >= 3) {
-        formatNum = num.replace(/(\d{3})(\d)/, '$1-$2');
-      }
-    }
+function phoneFormatter(num: string) {
+  var numbers = /^[0-9 -]+$/;
 
-    return formatNum;
+  var formatNum = num;
+  if (!num.match(numbers)) {
+    formatNum = '';
+    num = '';
+  }
+  num = num.replace(/-/g, '');
+  if (num.indexOf('02') == 0) {
+    if (num.length > 10) {
+      num = num.substr(0, 10);
+      formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+    } else if (num.length > 9) {
+      formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+    } else if (num.length > 5) {
+      formatNum = num.replace(/(\d{2})(\d{3})(\d)/, '$1-$2-$3');
+    } else if (num.length >= 2) {
+      formatNum = num.replace(/(\d{2})(\d)/, '$1-$2');
+    }
+  } else {
+    if (num.length > 11) {
+      num = num.substr(0, 11);
+      formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+    } else if (num.length > 10) {
+      formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+    } else if (num.length > 6) {
+      formatNum = num.replace(/(\d{3})(\d{3})(\d)/, '$1-$2-$3');
+    } else if (num.length >= 3) {
+      formatNum = num.replace(/(\d{3})(\d)/, '$1-$2');
+    }
   }
 
-  return <input type="text" onChange={updatePhoneNumber} />;
+  return formatNum;
 }
