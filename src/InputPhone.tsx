@@ -26,7 +26,14 @@ export function InputPhone({ onChange, style }: any) {
     onChange(str);
   };
 
-  return <input type="text" style={style} onChange={updatePhoneNumber} />;
+  return (
+    <input
+      value={phoneNumber}
+      type="text"
+      style={style}
+      onChange={updatePhoneNumber}
+    />
+  );
 }
 
 function phoneFormatter(num: string) {
