@@ -61,6 +61,12 @@ README.md         # Tailbar nemj bolno.
 tsconfig.json
 ```
 
+### Helpful Resource
+
+```copy
+  https://www.youtube.com/watch?v=aVFasPXkyRE
+```
+
 # Below is redundant script
 
 #### Jest

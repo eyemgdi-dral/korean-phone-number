@@ -10,6 +10,10 @@
   "engines": {
     "node": ">=10"
   },
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyemgdi-dral/korean-phone-number.git"},
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
