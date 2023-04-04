@@ -36,6 +36,18 @@ XXX-XXX-XXXX
 02-1234-5678
 ```
 
+## Usage | Хэрэглээ
+
+```jsx
+...
+
+import {InputPhone} from "korean-phone-number";
+...
+<InputPhone style={{padding: 5, border: "1px solid green"}} onChange={handleChange} />
+...
+...
+```
+
 ## Configuration | Тохиргоо
 
 Үндсэн элемэнт нь гадуураа Wrapper элемэнт байхгүй учир <input type="text"/> ашиглаж байгаа юм шиг ашиглахад болно.

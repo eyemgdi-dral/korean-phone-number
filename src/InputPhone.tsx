@@ -16,7 +16,7 @@ export function InputPhone({ onChange, style }: any) {
       str = '';
     } else {
       if (str.match(numbers)) {
-        str = phoneFormatter(str);
+        str = koreanPhoneFormatter(str);
       } else {
         str = old;
       }
@@ -36,7 +36,7 @@ export function InputPhone({ onChange, style }: any) {
   );
 }
 
-function phoneFormatter(num: string) {
+export function koreanPhoneFormatter(num: string) {
   var numbers = /^[0-9 -]+$/;
 
   var formatNum = num;
